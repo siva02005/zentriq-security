@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENTRIQ — Security Console</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">⬡ ZENTRIQ</div>
+        <div class="subtitle">Task-Aware Runtime Security Layer</div>
+        <div class="auth-bar">
+            <input type="password" id="api-key-input" placeholder="Enter API Key" />
+            <button onclick="saveApiKey()">Connect</button>
+            <span id="auth-status"></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="stats-row">
+            <div class="stat-card allow">
+                <div class="stat-number" id="allow-count">0</div>
+                <div class="stat-label">ALLOW</div>
+            </div>
+            <div class="stat-card restrict">
+                <div class="stat-number" id="restrict-count">0</div>
+                <div class="stat-label">RESTRICT</div>
+            </div>
+            <div class="stat-card block">
+                <div class="stat-number" id="block-count">0</div>
+                <div class="stat-label">BLOCK</div>
+            </div>
+            <div class="stat-card total">
+                <div class="stat-number" id="total-count">0</div>
+                <div class="stat-label">TOTAL</div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Active Policies</h2>
+            <table id="policies-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Effect</th>
+                        <th>Priority</th>
+                        <th>Action Types</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="policies-body"></tbody>
+            </table>
+        </section>
+
+        <section class="panel">
+            <h2>Audit Trail</h2>
+            <table id="audit-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Session</th>
+                        <th>Task</th>
+                        <th>Action</th>
+                        <th>Risk</th>
+                        <th>Decision</th>
+                        <th>Rule</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody id="audit-body"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>ZENTRIQ v0.1.0 — Deterministic AI Security</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
